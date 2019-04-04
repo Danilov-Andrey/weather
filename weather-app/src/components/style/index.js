@@ -22,15 +22,18 @@ export const Wrapper = styled.div`
   text-align: center;
   border-radius: 10px;
   cursor: ${props => (props.hover ? 'pointer' : 'auto')};
+  &:hover {
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  }
   ${props =>
     props.extraInfo &&
     css`
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      &:hover {
+        box-shadow: none;
+      }
     `};
-  &:hover {
-    box-shadow: 0px 0px 10px rgb(255, 255, 255);
-  }
 `;
 
 export const Temp = styled.p`
