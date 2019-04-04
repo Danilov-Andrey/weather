@@ -2,9 +2,10 @@ import styled, { css } from 'styled-components';
 
 export const MainWrapper = styled.div`
   font-family: 'Montserrat';
+  flex-grow: 1;
   color: black;
-  margin: auto;
-  max-width: 20rem;
+  margin: 0 auto;
+  max-width: 25rem;
   padding: 0 10px;
 `;
 
@@ -16,11 +17,9 @@ export const Img = styled.img`
 
 export const Wrapper = styled.div`
   font-weight: 500;
-  background-color: aliceblue;
-  text-align: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  padding-top: 20px;
   margin-top: 20px;
+  background-color: #37b6ce;
+  text-align: center;
   border-radius: 10px;
   cursor: ${props => (props.hover ? 'pointer' : 'auto')};
   ${props =>
@@ -29,6 +28,9 @@ export const Wrapper = styled.div`
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     `};
+  &:hover {
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  }
 `;
 
 export const Temp = styled.p`
@@ -43,6 +45,9 @@ export const Info = styled.div`
   justify-content: center;
   flex-direction: ${props => (props.column ? 'column' : 'wrap')};
   padding-bottom: ${props => (props.column ? '20px' : '0px')};
+  @media screen and (max-width: 320px) {
+    grid-column: 1/-1;
+  }
   ${props =>
     props.extraInfo &&
     css`
@@ -51,7 +56,19 @@ export const Info = styled.div`
       flex-direction: row;
       justify-content: space-around;
       align-items: baseline;
-    `}
+      @media screen and (max-width: 320px) {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+      }
+    `};
+  ${props =>
+    props.column &&
+    css`
+      @media screen and (max-width: 320px) {
+        grid-column: 2;
+      }
+    `};
 `;
 
 export const CelsiusIcon = styled.img`
@@ -70,11 +87,14 @@ export const MoreTemp = styled.div`
 `;
 
 export const Title = styled.h1`
+  margin-top: 20px;
+  display: inline-block;
+  padding: 0 10px;
   font-weight: 500;
+  color: ${props => (props.list ? 'white' : 'inherit')};
   font-size: ${props => (props.extraInfo ? '1em' : '2em')};
-  margin-top: 0;
-  margin-bottom: 20px;
-  margin-top: ${props => (props.list ? '20px' : '0px')};
+  margin-bottom: ${props => (props.list ? '0px' : '20px')};
+  margin-top: 20px;
   text-align: center;
   ${props =>
     props.extraInfo &&
@@ -96,10 +116,11 @@ export const Low = styled(High)`
 `;
 
 export const Indicator = styled.div`
+  margin-top: 20px;
   font-size: 30px;
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
+  color: white;
 `;
 
 export const SmallCardInfo = styled.div``;
@@ -116,6 +137,7 @@ export const ErrorMessage = styled.div`
   padding: 10px;
   display: grid;
   grid-gap: 10px;
+  color: white;
 `;
 
 export const Button = styled.button`
@@ -139,7 +161,7 @@ export const Input = styled.input`
 `;
 
 export const Form = styled.form`
-  margin-top: 20px;
+  padding-top: 20px;
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-flow: column;
