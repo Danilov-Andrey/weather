@@ -1,12 +1,17 @@
 import styled, { css } from 'styled-components';
 
-export const MainWrapper = styled.div`
+export const Weather = styled.div`
   font-family: 'Montserrat';
   flex-grow: 1;
-  color: black;
+  color: ${props => props.theme.textColor};
   margin: 0 auto;
   max-width: 25rem;
   padding: 0 10px;
+`;
+
+export const MainWrapper = styled.div`
+  background-color: ${props => props.theme.mainBackgroundColor};
+  width: 100%;
 `;
 
 export const Img = styled.img`
@@ -18,12 +23,12 @@ export const Img = styled.img`
 export const Wrapper = styled.div`
   font-weight: 500;
   margin-top: 20px;
-  background-color: #37b6ce;
+  background-color: ${props => props.theme.cardsBackground};
   text-align: center;
   border-radius: 10px;
   cursor: ${props => (props.hover ? 'pointer' : 'auto')};
   &:hover {
-    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    box-shadow: ${props => props.theme.boxShadow};
   }
   ${props =>
     props.extraInfo &&
@@ -172,4 +177,8 @@ export const Form = styled.form`
 
 export const WrapperList = styled.div`
   padding-bottom: 20px;
+`;
+
+export const Switcher = styled.div`
+  padding-top: 10px;
 `;
