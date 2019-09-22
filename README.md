@@ -1,11 +1,9 @@
-https://burger-builder-163.firebaseapp.com
+https://weather-andrey-danilov.herokuapp.com
 
-Приложение для заказа бургера на React/Redux/Firebase.
+Приложение прогноза погоды на React/Redux.
 
-![Image alt](https://github.com/Danilov-Andrey/burger-shop-firebase/blob/master/1.jpg)
+![Image alt](https://github.com/Danilov-Andrey/weather/blob/master/1.jpg)
 
-![Image alt](https://github.com/Danilov-Andrey/burger-shop-firebase/blob/master/2.jpg)
+![Image alt](https://github.com/Danilov-Andrey/weather/blob/master/2.jpg)
 
-![Image alt](https://github.com/Danilov-Andrey/burger-shop-firebase/blob/master/3.jpg)
-
-![Image alt](https://github.com/Danilov-Andrey/burger-shop-firebase/blob/master/4.jpg)
+![Image alt](https://github.com/Danilov-Andrey/weather/blob/master/3.jpg)
